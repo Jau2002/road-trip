@@ -1,0 +1,42 @@
+{
+	"name": "road-trip",
+	"private": true,
+	"scripts": {
+		"format": "prettier --config \".prettierrc.yaml\" -u -l --no-editorconfig -w \"**/**/**.{js,jsx}\" --ignore-path \".gitignore\"",
+		"lint": "eslint -c \".eslintrc.yaml\" --fix \"**/**/*.{js,jsx}\" --color"
+	},
+	"engines": {
+		"node": ">=16.17.0",
+		"npm": ">=8"
+	},
+	"volta": {
+		"node": ">=16.17.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Jau2002/road-trip.git"
+	},
+	"workspaces": [
+		"api"
+	],
+	"author": "Jaume Suarez Molina <santjaume02@gmail.com> (https://co.linkedin.com/in/jaumesuarez)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Jau2002/road-trip/issues"
+	},
+	"homepage": "https://github.com/Jau2002/road-trip#readme",
+	"dependencies": {
+		"axios": "1.1.3",
+		"dotenv": "16.0.3"
+	},
+	"devDependencies": {
+		"eslint": "8.26.0",
+		"eslint-config-airbnb": "19.0.4",
+		"eslint-config-prettier": "8.5.0",
+		"eslint-plugin-import": "2.26.0",
+		"eslint-plugin-jsx-a11y": "6.6.1",
+		"eslint-plugin-react": "7.31.10",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"prettier": "2.7.1"
+	}
+}

@@ -1,0 +1,42 @@
+env:
+  browser: true
+  es2022: true
+  node: true
+extends:
+  - plugin:react/recommended
+  - airbnb
+  - prettier
+overrides: []
+parserOptions:
+  ecmaVersion: latest
+plugins:
+  - react
+rules:
+  indent: [2, all]
+  curly: [2, all]
+  lines-around-comment:
+    - 2
+    - beforeBlockComment: true
+      afterBlockComment: true
+      beforeLineComment: true
+      afterLineComment: true
+      allowBlockStart: true
+      allowBlockEnd: true
+      allowObjectStart: true
+      allowObjectEnd: true
+      allowArrayStart: true
+      allowArrayEnd: true
+  max-len: 0
+  no-confusing-arrow: 0
+  no-mixed-operators: 2
+  no-tabs:
+    - 2
+    - allowIndentationTabs: true
+  no-unexpected-multiline: 2
+  quotes:
+    - 2
+    - single
+    - avoidEscape: true
+      allowTemplateLiterals: false
+  no-restricted-syntax: 0
+ignorePatterns: ['node_modules/']

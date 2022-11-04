@@ -1,0 +1,6 @@
+useTabs: true
+singleQuote: true
+jsxSingleQuote: true
+trailingComma: es5
+embeddedLanguageFormatting: off
+singleAttributePerLine: true

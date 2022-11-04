@@ -1,0 +1,50 @@
+name: check-linters
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  commit:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: webiny/action-conventional-commits@v1.1.0
+
+  format:
+    needs: [commit]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          node-version: 'lts/gallium'
+      - name: install dependencies
+        run: npm ci
+      - name: Perf format
+        run: npm run format
+
+  lint:
+    needs: [format]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          node-version: 'lts/gallium'
+      - name: install dependencies
+        run: npm ci
+      - name: Lint Perse
+        run: npm run lint
