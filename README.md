@@ -1,5 +1,7 @@
 # ROAD TRIP
 
+[![check-linters](https://github.com/Jau2002/road-trip/actions/workflows/pipeline.yaml/badge.svg?branch=main)](https://github.com/Jau2002/road-trip/actions/workflows/pipeline.yaml)
+
 ## Individual Project - Henry Countries
 
 ### Objetivos del Proyecto
@@ -13,24 +15,6 @@
 ### Horarios y Fechas
 
 El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
-
-### BoilerPlate
-
-El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
-
-En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
-
-```env
-DB_USER=usuariodepostgres
-DB_PASSWORD=passwordDePostgres
-DB_HOST=localhost
-```
-
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
-
-Adicionalmente será necesario que creen desde psql una base de datos llamada `countries`
-
-El contenido de `client` fue creado usando: Create React App.
 
 ### Enunciado
 

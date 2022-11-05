@@ -48,3 +48,22 @@ jobs:
         run: npm ci
       - name: Lint Perse
         run: npm run lint
+
+  mocha:
+    needs: [lint]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          node-version: 'lts/gallium'
+      - name: install dependencies
+        run: npm ci
+      - name: initialization will testing
+        run: npm run start-test -w api
+      - name: testing to back end
+        run: npm run test -w api

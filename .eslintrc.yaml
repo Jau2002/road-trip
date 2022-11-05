@@ -2,6 +2,7 @@ env:
   browser: true
   es2022: true
   node: true
+  mocha: true
 extends:
   - plugin:react/recommended
   - airbnb
@@ -12,8 +13,10 @@ parserOptions:
 plugins:
   - react
 rules:
-  indent: [2, all]
-  curly: [2, all]
+  indent: 0
+  curly:
+    - 2
+    - all
   lines-around-comment:
     - 2
     - beforeBlockComment: true
@@ -39,4 +42,7 @@ rules:
     - avoidEscape: true
       allowTemplateLiterals: false
   no-restricted-syntax: 0
+  import/no-extraneous-dependencies: 0
+  import/no-dynamic-require: 0
+  global-require: 0
 ignorePatterns: ['node_modules/']
