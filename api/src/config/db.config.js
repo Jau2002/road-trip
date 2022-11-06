@@ -44,6 +44,6 @@ const capsEntries = entries.map((entry) => [
 
 sequelize.models = Object.fromEntries(capsEntries);
 
-// const { Country } = sequelize.models;
+// const { Country, Activity } = sequelize.models;
 
 module.exports = { start, conn: sequelize, ...sequelize.models };

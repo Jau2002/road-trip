@@ -7,11 +7,10 @@ module.exports = (sequelize) =>
 			id: {
 				type: DataTypes.STRING(3),
 				primaryKey: true,
-				unique: true,
 			},
 			name: {
 				type: DataTypes.STRING,
-				allowNull: false,
+				unique: true,
 			},
 			flag: {
 				type: DataTypes.TEXT,
