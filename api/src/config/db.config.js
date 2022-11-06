@@ -13,7 +13,7 @@ const start = async () => {
 		const result = await initialise(1);
 		console.log(result.message);
 	} catch (err) {
-		console.error('Could not start server', err);
+		console.error(err);
 		process.exit(1);
 	}
 };
@@ -32,6 +32,7 @@ readdirSync(join(__dirname, '../models'))
 	.forEach((file) => {
 		modelDefiners.push(require(join(__dirname, '../models', file)));
 	});
+
 modelDefiners.forEach((model) => model(sequelize));
 
 const entries = Object.entries(sequelize.models);
@@ -40,6 +41,7 @@ const capsEntries = entries.map((entry) => [
 	entry[0][0].toUpperCase() + entry[0].slice(1),
 	entry[1],
 ]);
+
 sequelize.models = Object.fromEntries(capsEntries);
 
 module.exports = { start, conn: sequelize, ...sequelize.models };
