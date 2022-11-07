@@ -44,6 +44,24 @@ const capsEntries = entries.map((entry) => [
 
 sequelize.models = Object.fromEntries(capsEntries);
 
-// const { Country, Activity } = sequelize.models;
+const { Country, Activity } = sequelize.models;
 
-module.exports = { start, conn: sequelize, ...sequelize.models };
+Country.belongsToMany(Activity, {
+	through: 'country_activity',
+	uniqueKey: false,
+	foreignKey: 'country_id',
+	timestamps: false,
+});
+
+Activity.belongsToMany(Country, {
+	through: 'country_activity',
+	uniqueKey: false,
+	foreignKey: 'activity_id',
+	timestamps: false,
+});
+
+module.exports = {
+	...sequelize.models,
+	conn: sequelize,
+	start,
+};
