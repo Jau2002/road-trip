@@ -43,7 +43,7 @@ A continuación se detallaran los requerimientos mínimos para la aprobación de
 - [ ] React
 - [ ] Redux
 - [ ] Express
-- [ ] Sequelize - Postgres
+- [x] Sequelize - Postgres
 
 ### Frontend
 
@@ -100,7 +100,7 @@ El modelo de la base de datos deberá tener las siguientes entidades (Aquellas p
   - Subregión
   - Área
   - Población
-- [ ] Actividad Turística con las siguientes propiedades:
+- [x] Actividad Turística con las siguientes propiedades:
   - ID
   - Nombre
   - Dificultad (Entre 1 y 5)

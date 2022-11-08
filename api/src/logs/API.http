@@ -1,0 +1,15 @@
+# variable
+
+@API_REST = https://restcountries.com/v3/
+
+### Solicit call all countries
+
+GET {{API_REST}}/all HTTP/1.1
+
+### request by name
+
+GET {{API_REST}}/name/Hong Kong HTTP/1.1
+
+### reques by code
+
+GET {{API_REST}}/alpha/GUA HTTP/1.1
