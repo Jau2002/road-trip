@@ -17,7 +17,7 @@ const requestApi = async () => {
 			code: cca3,
 			name: name.common,
 			flag: flags[0],
-			continents: continents.map((c) => c),
+			continent: continents[0],
 			capital: capital ? capital[0] : null,
 			subregion,
 			area,
@@ -27,7 +27,5 @@ const requestApi = async () => {
 
 	return response;
 };
-
-requestApi();
 
 module.exports = requestApi;

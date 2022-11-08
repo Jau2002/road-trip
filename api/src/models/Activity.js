@@ -1,15 +1,15 @@
-const { DataTypes } = require('sequelize');
+const { STRING, SMALLINT, DATEONLY, ARRAY, ENUM } = require('sequelize');
 
 module.exports = (sequelize) =>
 	sequelize.define(
 		'activity',
 		{
 			name: {
-				type: DataTypes.STRING,
+				type: STRING,
 				unique: true,
 			},
 			difficulty: {
-				type: DataTypes.SMALLINT,
+				type: SMALLINT,
 				allowNull: false,
 				validate: {
 					min: 1,
@@ -17,16 +17,16 @@ module.exports = (sequelize) =>
 				},
 			},
 			leaving: {
-				type: DataTypes.DATEONLY,
+				type: DATEONLY,
 				allowNull: false,
 			},
 			going: {
-				type: DataTypes.DATEONLY,
+				type: DATEONLY,
 				allowNull: false,
 			},
 			seasons: {
-				type: DataTypes.ARRAY(
-					DataTypes.ENUM({
+				type: ARRAY(
+					ENUM({
 						values: ['Summer', 'Autumn', 'Winter', 'Spring'],
 					})
 				),

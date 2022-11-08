@@ -1,36 +1,36 @@
-const { DataTypes } = require('sequelize');
+const { STRING, TEXT, SMALLINT } = require('sequelize');
 
 module.exports = (sequelize) =>
 	sequelize.define(
 		'country',
 		{
-			id: {
-				type: DataTypes.STRING(3),
+			code: {
+				type: STRING(3),
 				primaryKey: true,
 			},
 			name: {
-				type: DataTypes.STRING,
+				type: STRING,
 				unique: true,
 			},
 			flag: {
-				type: DataTypes.TEXT,
+				type: TEXT,
 				allowNull: false,
 			},
 			continent: {
-				type: DataTypes.STRING,
+				type: STRING,
 				allowNull: false,
 			},
 			capital: {
-				type: DataTypes.STRING,
+				type: STRING,
 			},
-			sub_region: {
-				type: DataTypes.STRING,
+			subregion: {
+				type: STRING,
 			},
 			area: {
-				type: DataTypes.SMALLINT,
+				type: SMALLINT,
 			},
 			population: {
-				type: DataTypes.SMALLINT,
+				type: SMALLINT,
 			},
 		},
 		{
