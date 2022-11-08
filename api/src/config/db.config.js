@@ -49,7 +49,7 @@ const { Country, Activity } = sequelize.models;
 Country.belongsToMany(Activity, {
 	through: 'country_activity',
 	uniqueKey: false,
-	foreignKey: 'country_id',
+	foreignKey: 'country_code',
 	timestamps: false,
 });
 

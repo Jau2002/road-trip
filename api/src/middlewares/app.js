@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const rootRoute = require('../routes');
 
 const server = express();
 
@@ -22,5 +23,7 @@ server.use((_, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
 	next();
 });
+
+server.use('/', rootRoute);
 
 module.exports = server;
