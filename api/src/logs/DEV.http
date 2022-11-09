@@ -1,0 +1,17 @@
+# Varables
+
+@PORT=3001
+
+@HOST=http://localhost
+
+@URL={{HOST}}:{{PORT}}
+
+## Health
+
+GET {{URL}}/health HTTP/1.1
+
+## Country
+
+### request all countries
+
+GET {{URL}}/countries HTTP/1.1
