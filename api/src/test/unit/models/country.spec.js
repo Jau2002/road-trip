@@ -13,7 +13,7 @@ describe('Country model', () => {
 
 		beforeEach(async () => {
 			model = await Country.create({
-				id: 'zzz',
+				code: 'zzz',
 				name: 'Nazi',
 				flag: 'https://www.lavanguardia.com/files/image_449_220/uploads/2021/08/17/611b908d60e7b.jpeg',
 				continent: 'Europe',
@@ -22,8 +22,8 @@ describe('Country model', () => {
 
 		afterEach(() => Country.sync({ force: true }));
 
-		it('should not have a "null" ID, NAME, FLAG and CONTINENT', () => {
-			expect(model.toJSON()).to.have.ownProperty('id').to.not.be.a('null');
+		it('should not have a "null" CODE, NAME, FLAG and CONTINENT', () => {
+			expect(model.toJSON()).to.have.ownProperty('code').to.not.be.a('null');
 
 			expect(model.toJSON()).to.have.ownProperty('name').to.not.be.a('null');
 
@@ -35,7 +35,7 @@ describe('Country model', () => {
 		});
 
 		it('should the NAME have length 3', () => {
-			expect(model.toJSON()).to.have.ownProperty('id').to.have.lengthOf(3);
+			expect(model.toJSON()).to.have.ownProperty('code').to.have.lengthOf(3);
 		});
 
 		it('should the FLAG url be valid format', () => {
@@ -44,8 +44,8 @@ describe('Country model', () => {
 				.to.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jp?eg|gif|png)/g);
 		});
 
-		it('should be of type "string" ID, NAME, FLAG and CONTINENT', () => {
-			expect(model.toJSON()).to.have.ownProperty('id').to.be.a('string');
+		it('should be of type "string" CODE, NAME, FLAG and CONTINENT', () => {
+			expect(model.toJSON()).to.have.ownProperty('code').to.be.a('string');
 
 			expect(model.toJSON()).to.have.ownProperty('name').to.be.a('string');
 
@@ -54,13 +54,13 @@ describe('Country model', () => {
 			expect(model.toJSON()).to.have.ownProperty('continent').to.be.a('string');
 		});
 
-		it('should be of type "string" or "null" CAPITAL and SUB_REGION', () => {
+		it('should be of type "string" or "null" CAPITAL and SUBREGION', () => {
 			expect(model.toJSON())
 				.to.have.ownProperty('capital')
 				.to.be.oneOf(['string', null]);
 
 			expect(model.toJSON())
-				.to.have.ownProperty('sub_region')
+				.to.have.ownProperty('subregion')
 				.to.be.oneOf(['string', null]);
 		});
 
