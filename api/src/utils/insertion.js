@@ -1,12 +1,12 @@
 const attachinDb = require('../services/attachInDb');
 const requestApi = require('../services/requestApi');
 
-const insertion = [attachinDb, requestApi];
+const insertion = async () => {
+	const request = Promise.allSettled([requestApi(), attachinDb()]);
 
-Promise.allSettled(insertion)
-	.then((data) => data.values)
-	.catch((err) => {
-		throw new Error(err);
-	});
+	const [{ value: getDataApi }, { value: getTablesDb }] = await request;
+
+	return [...getDataApi, ...getTablesDb];
+};
 
 module.exports = insertion;
