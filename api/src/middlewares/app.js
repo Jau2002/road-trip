@@ -3,17 +3,17 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const rootRoute = require('../routes');
 
-const server = express();
+const app = express();
 
-server.use(express.urlencoded({ extended: true, limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
-server.use(express.json({ limit: '50mb' }));
+app.use(express.json({ limit: '50mb' }));
 
-server.use(cookieParser());
+app.use(cookieParser());
 
-server.use(morgan('dev'));
+app.use(morgan('dev'));
 
-server.use((_, res, next) => {
+app.use((_, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Credentials', 'true');
 	res.header(
@@ -24,6 +24,6 @@ server.use((_, res, next) => {
 	next();
 });
 
-server.use('/', rootRoute);
+app.use('/', rootRoute);
 
-module.exports = server;
+module.exports = app;

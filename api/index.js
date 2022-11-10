@@ -22,8 +22,8 @@ console.clear();
 
 require('dotenv').config({ path: '.env.local' });
 const { conn, start } = require('./src/config/db.config');
-const server = require('./src/middlewares/app');
+const app = require('./src/middlewares/app');
 
 const PORT = process.env.PORT || 3001;
 
-conn.sync({ force: true }).then(() => server.listen(PORT, start));
+conn.sync({ force: true }).then(() => app.listen(PORT, start));
