@@ -13,7 +13,7 @@ const getByQuery = async (req, res) => {
 			return filterForName.length
 				? res.status(OK).send(filterForName)
 				: res.status(CONFLICT).send({
-						message: `the ${name} country does not exist`,
+						message: `the ${name} country doesn´t exist`,
 				  });
 		}
 		return res.status(OK).send(allCountries);
