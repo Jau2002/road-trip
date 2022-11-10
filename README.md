@@ -118,7 +118,7 @@ Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
 - [x] **GET /countries**:
   - En una primera instancia deberán traer todos los países desde restcountries y guardarlos en su propia base de datos y luego ya utilizarlos desde allí (Debe retonar sólo los datos necesarios para la ruta principal)
   - Obtener un listado de los paises.
-- [] **GET /countries/{idPais}**:
+- [x] **GET /countries/{idPais}**:
   - Obtener el detalle de un país en particular
   - Debe traer solo los datos pedidos en la ruta de detalle de país
   - Incluir los datos de las actividades turísticas correspondientes

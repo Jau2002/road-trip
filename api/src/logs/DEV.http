@@ -20,8 +20,17 @@ GET {{URL}}/countries HTTP/1.1
 
 GET {{URL}}/countries?name=Mexico HTTP/1.1
 
+### request fiter by code
+
+GET {{URL}}/countries/ARG HTTP/1.1
+
 ## Errors
 
-### catch 409 the country does not exist
+### catch 409 the country doesn´t exist
 
 GET {{URL}}/countries?name=Moldavia HTTP/1.1
+
+### catch 400 the code doesn´t match
+
+GET {{URL}}/countries/KSK HTTP/1.1
+
