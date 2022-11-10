@@ -2,9 +2,9 @@ const { OK, NOT_FOUND } = require('./protocols');
 
 const getHealth = async (_, res) => {
 	try {
-		res.status(OK).send({ message: 'the server is running' });
+		return res.status(OK).send({ message: 'the server is running' });
 	} catch (err) {
-		res.status(NOT_FOUND).send({ message: err.message });
+		return res.status(NOT_FOUND).send({ message: err.message });
 	}
 };
 

@@ -3,8 +3,8 @@ const { OK, NOT_FOUND, CONFLICT } = require('./protocols');
 
 const getByQuery = async (req, res) => {
 	const allCountries = await insertion();
+	const { name } = req.query;
 	try {
-		const { name } = req.query;
 		if (name) {
 			const filterForName = allCountries.filter((c) =>
 				c.name.toUpperCase().includes(name.toUpperCase())
