@@ -6,9 +6,15 @@ const CONFLICT = 409;
 
 const BAD_REQUEST = 400;
 
+const CREATE = 201;
+
+const UNPROCESSABLE_ENTITY = 422;
+
 module.exports = {
 	OK,
 	NOT_FOUND,
 	CONFLICT,
 	BAD_REQUEST,
+	CREATE,
+	UNPROCESSABLE_ENTITY,
 };

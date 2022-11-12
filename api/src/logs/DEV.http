@@ -24,6 +24,26 @@ GET {{URL}}/countries?name=Mexico HTTP/1.1
 
 GET {{URL}}/countries/ARG HTTP/1.1
 
+### Create new Activity
+
+POST {{URL}}/activities HTTP/1.1
+Content-Type: application/json
+
+{
+   "name": "cum",
+  "difficulty": 3,
+  "going": "3001-04-16",
+  "leaving": "3001-06-02",
+  "seasons": [
+    "Winter",
+    "Spring"
+  ],
+  "countries": [
+    "Andorra",
+    "Russia"
+  ]
+}
+
 ## Errors
 
 ### catch 409 the country doesn´t exist
@@ -33,4 +53,13 @@ GET {{URL}}/countries?name=Moldavia HTTP/1.1
 ### catch 400 the code doesn´t match
 
 GET {{URL}}/countries/KSK HTTP/1.1
+
+### cath 422 there is a validation error
+
+POST {{URL}}/activities HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
 
