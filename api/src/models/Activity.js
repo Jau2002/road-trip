@@ -7,6 +7,7 @@ module.exports = (sequelize) =>
 			name: {
 				type: STRING,
 				unique: true,
+				allowNull: false,
 			},
 			difficulty: {
 				type: SMALLINT,
