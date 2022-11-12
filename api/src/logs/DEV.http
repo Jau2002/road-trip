@@ -44,6 +44,11 @@ Content-Type: application/json
   ]
 }
 
+### request all activities 
+
+GET {{URL}}/activities HTTP/1.1
+
+
 ## Errors
 
 ### catch 409 the country doesn´t exist
