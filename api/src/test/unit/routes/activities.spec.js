@@ -81,4 +81,31 @@ describe('Country routes', () => {
 			});
 		});
 	});
+
+	describe('GET /activities HTTP/1.1', () => {
+		it('should return as JSON object', async () => {
+			const { header, body } = await agent.get('/activities');
+			expect(header['content-type']).to.match(/application\/json/);
+			expect(body).to.be.not.an('object');
+		});
+
+		it('should when request to send status 200', async () => {
+			const { status } = await agent.get('/activities');
+			expect(status).to.equal(200);
+		});
+
+		it('should when doing multiple post return all activities', async () => {
+			const { body } = await agent.get('/activities');
+			expect(body).to.deep.equal([
+				{
+					id: 1,
+					name: 'fack',
+					difficulty: 5,
+					leaving: '2087-11-01',
+					going: '2077-01-26',
+					seasons: ['Summer', 'Autumn'],
+				},
+			]);
+		});
+	});
 });
