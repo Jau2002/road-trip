@@ -11,11 +11,14 @@ const postByBody = async (req, res) => {
 			leaving,
 			seasons,
 		});
-		const query = await Country.findAll({
-			where: { name: countries },
-		});
-		newActivity.addCountry(query);
-
+		await Promise.all(
+			countries?.map(async (country) => {
+				const query = await Country.findOne({
+					where: { name: country },
+				});
+				newActivity.addCountry(query);
+			})
+		);
 		return res.status(OK).send({ message: 'Activity created successfully' });
 	} catch (err) {
 		return res.status(UNPROCESSABLE_ENTITY).send({ message: err.message });
