@@ -5,7 +5,7 @@
 	"scripts": {
 		"start": "cross-env NODE_ENV=production node \"index.js\"",
 		"serve": "cross-env NODE_ENV=development nodemon -L \"index.js\"",
-		"test": "cross-env NODE_ENV=development mocha \"**/test/unit/**/*.spec.js\" --exit",
+		"test": "cross-env NODE_ENV=development mocha --timeout 5000 \"**/test/unit/**/*.spec.js\" --exit",
 		"start-test": "cross-env NODE_ENV=development node \"index.js\""
 	},
 	"author": "Jaume Suarez Molina <santjaume02@gmail.com> (https://co.linkedin.com/in/jaumesuarez)",

@@ -34,7 +34,9 @@ describe('Country routes', () => {
 			const { status } = await agent.get('/countries');
 			expect(status).to.equal(200);
 		});
+	});
 
+	describe('GET /countries?name=Colombia HTTP/1.1', () => {
 		it('should when request called by QUERY send a status 200', async () => {
 			const { status } = await agent
 				.get('/countries')
@@ -56,10 +58,13 @@ describe('Country routes', () => {
 					subregion: 'South America',
 					area: 1141748,
 					population: 50882884,
+					activities: [],
 				},
 			]);
 		});
+	});
 
+	describe('GET /countries?name=Polombia HTTP/1.1', () => {
 		it('should send status 409 the QUERY does not match any country', async () => {
 			const { status } = await agent
 				.get('/countries')
@@ -75,7 +80,9 @@ describe('Country routes', () => {
 				message: 'the Polombia country doesn´t exist',
 			});
 		});
+	});
 
+	describe('GET /countries/AFG HTTP/1.1', () => {
 		it('should when request passing PARAM by parameter send a status 200', async () => {
 			const code = 'AFG';
 			const { status } = await agent.get(`/countries/${code}`);
@@ -95,10 +102,13 @@ describe('Country routes', () => {
 					subregion: 'Southern Asia',
 					area: 652230,
 					population: 40218234,
+					activities: [],
 				},
 			]);
 		});
+	});
 
+	describe('GET /countries/AFG HTTP/1.1', () => {
 		it('should send status 409 the PARAM does not match any code', async () => {
 			const code = 'USD';
 			const { status } = await agent.get(`/countries/${code}`);
