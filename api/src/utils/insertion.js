@@ -1,12 +1,29 @@
-const attachinDb = require('../services/attachInDb');
 const requestApi = require('../services/requestApi');
+const { Country, Activity } = require('../config/db.config');
 
 const insertion = async () => {
-	const request = Promise.allSettled([requestApi(), attachinDb()]);
+	const request = await requestApi();
 
-	const [{ value: getDataApi }, { value: getTablesDb }] = await request;
+	await Promise.all(
+		request.map(async (c) => {
+			Country.findOrCreate({
+				where: { code: c.code },
+				defaults: {
+					code: c.code,
+					name: c.name,
+					flag: c.flag,
+					continent: c.continent,
+					capital: c.capital,
+					subregion: c.subregion,
+					area: c.area,
+					population: c.population,
+				},
+			});
+		})
+	);
+	const query = await Country.findAll({ include: Activity });
 
-	return [...getDataApi, ...getTablesDb];
+	return query;
 };
 
 module.exports = insertion;

@@ -1,4 +1,4 @@
-const { STRING, TEXT, SMALLINT } = require('sequelize');
+const { STRING, TEXT, FLOAT } = require('sequelize');
 
 module.exports = (sequelize) =>
 	sequelize.define(
@@ -27,10 +27,10 @@ module.exports = (sequelize) =>
 				type: STRING,
 			},
 			area: {
-				type: SMALLINT,
+				type: FLOAT,
 			},
 			population: {
-				type: SMALLINT,
+				type: FLOAT,
 			},
 		},
 		{
