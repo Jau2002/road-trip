@@ -32,6 +32,23 @@ jobs:
       - name: Perf format
         run: npm run format
 
+  style:
+    needs: [format]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+          node-version: 'lts/gallium'
+      - name: install dependencies
+        run: npm ci
+      - name: Style check
+        run: npm run style -w client
+
   lint:
     needs: [format]
     runs-on: ubuntu-22.04

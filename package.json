@@ -17,7 +17,8 @@
 		"url": "git+https://github.com/Jau2002/road-trip.git"
 	},
 	"workspaces": [
-		"api"
+		"api",
+		"client"
 	],
 	"author": "Jaume Suarez Molina <santjaume02@gmail.com> (https://co.linkedin.com/in/jaumesuarez)",
 	"license": "MIT",

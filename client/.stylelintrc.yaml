@@ -1,0 +1,7 @@
+extends: [stylelint-config-standard-scss, stylelint-config-prettier-scss]
+rules:
+  no-empty-source: null
+  property-no-unknown:
+    - true
+    - ignoreProperties: [font-smooth]
+ignoreFiles: ['**/node_modules/', 'dist/', 'coverage/']
