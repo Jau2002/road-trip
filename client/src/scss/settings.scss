@@ -1,0 +1,49 @@
+/* Pointer images */
+
+$bg-landing: 'bg-landing.jpg';
+$gb: 'bg.jpg';
+
+/* Animations */
+
+@keyframes icons {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(0.5rem, 1rem);
+	}
+}
+
+/* Custom fonts */
+
+$font-family: 'Roboto', sans-serif;
+
+@font-face {
+	font-family: Roboto;
+	font-weight: 900;
+	font-style: normal;
+	src: url('/public/roboto-black.woff2') format('woff2');
+	font-display: swap;
+}
+@font-face {
+	font-family: Roboto;
+	font-weight: 700;
+	font-style: normal;
+	src: url('/public/roboto-bold.woff2') format('woff2');
+	font-display: swap;
+}
+@font-face {
+	font-family: Roboto;
+	font-weight: 500;
+	font-style: normal;
+	src: url('/public/roboto-medium.woff2') format('woff2');
+	font-display: swap;
+}
+@font-face {
+	font-family: Roboto;
+	font-weight: 500;
+	font-style: italic;
+	src: url('/public/Roboto-MediumItalic.woff2') format('woff2');
+	font-display: swap;
+}

@@ -1,0 +1,17 @@
+a > img {
+	margin: 0.5em;
+	height: 50px;
+	width: 50px;
+
+	&:hover {
+		animation: icons 1s forwards;
+		animation-direction: alternate;
+	}
+}
+
+main {
+	background-image: url('/public/'$bg) no-repeat center scroll;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}

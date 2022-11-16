@@ -1,0 +1,14 @@
+.Header {
+	position: absolute;
+	backdrop-filter: brightness(25%);
+	padding: 2rem;
+	top: 10rem;
+	left: 30rem;
+	border-radius: 1rem;
+	@include flex-flow(column, center);
+
+	&-h1 {
+		font: 900 3em $font-family;
+		padding: 0.5em 0;
+	}
+}
