@@ -1,4 +1,4 @@
-const insertion = require('../utils/insertion');
+const insertion = require('../services/insertion');
 const { OK, NOT_FOUND, BAD_REQUEST } = require('./protocols');
 
 const getByParam = async (req, res) => {

@@ -51,8 +51,8 @@ Se debe desarrollar una aplicación de React/Redux que contenga las siguientes p
 
 **Pagina inicial**: deben armar una landing page con
 
-- [ ] Alguna imagen de fondo representativa al proyecto
-- [ ] Botón para ingresar al home (`Ruta principal`)
+- [x] Alguna imagen de fondo representativa al proyecto
+- [x] Botón para ingresar al home (`Ruta principal`)
 
 **Ruta principal**: debe contener
 

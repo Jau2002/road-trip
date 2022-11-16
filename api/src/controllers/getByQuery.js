@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const { Country, Activity } = require('../config/db.config');
 const { OK, NOT_FOUND, CONFLICT } = require('./protocols');
-const insertion = require('../utils/insertion');
+const insertion = require('../services/insertion');
 
 const getByQuery = async (req, res) => {
 	const { name } = req.query;

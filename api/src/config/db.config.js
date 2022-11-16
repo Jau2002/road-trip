@@ -10,10 +10,8 @@ const initialise = makeInitialiser(config);
 
 const start = async () => {
 	try {
-		const result = await initialise(1);
-		console.log(result.message);
+		await initialise(3);
 	} catch (err) {
-		console.error(err);
 		process.exit(1);
 	}
 };

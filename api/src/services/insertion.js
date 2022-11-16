@@ -1,4 +1,4 @@
-const requestApi = require('../services/requestApi');
+const requestApi = require('./requestApi');
 const { Country, Activity } = require('../config/db.config');
 
 const insertion = async () => {
@@ -6,7 +6,7 @@ const insertion = async () => {
 
 	await Promise.all(
 		request.map(async (c) => {
-			Country.findOrCreate({
+			await Country.findOrCreate({
 				where: { code: c.code },
 				defaults: {
 					code: c.code,

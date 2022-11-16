@@ -18,8 +18,6 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-console.clear();
-
 require('dotenv').config({ path: '.env.local' });
 const { conn, start } = require('./src/config/db.config');
 const app = require('./src/middlewares/app');
