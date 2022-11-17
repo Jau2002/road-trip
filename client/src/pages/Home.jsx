@@ -1,13 +1,14 @@
 import Country from '../components/Country';
-import useMemory from '../hooks/useMemory';
+import Paging from '../components/Paging';
+import useManagement from '../hooks/useManagement';
 
 function Home() {
-	const { country } = useMemory();
+	const { totalRecords, handleOnClick } = useManagement();
 	return (
 		<main>
 			<article>
-				{country.length ? (
-					country.map(({ code, name, continent, flag }) => (
+				{totalRecords.length ? (
+					totalRecords.map(({ code, name, continent, flag }) => (
 						<Country
 							key={code}
 							name={name}
@@ -22,6 +23,7 @@ function Home() {
 					/>
 				)}
 			</article>
+			<Paging handleOnClick={handleOnClick} />
 		</main>
 	);
 }

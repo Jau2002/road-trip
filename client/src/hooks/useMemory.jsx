@@ -6,11 +6,11 @@ import { selectCountries } from '../constants';
 function useMemory() {
 	const dispatch = useDispatch();
 
-	const country = useSelector(selectCountries);
-
 	useEffect(() => {
 		dispatch(getAllCountries());
 	}, [dispatch]);
+
+	const country = useSelector(selectCountries);
 
 	return { country };
 }
