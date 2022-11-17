@@ -10,3 +10,19 @@
 .u-bg-vh {
 	height: 100vh;
 }
+
+.u-article {
+	@include grid-template;
+}
+
+.u-bg-home {
+	position: absolute;
+	filter: opacity(15%);
+}
+
+.u-preloader {
+	height: 15rem;
+	margin: 13rem 30rem;
+	border-radius: 10%;
+	box-shadow: blur(10%);
+}

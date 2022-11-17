@@ -4,3 +4,10 @@
 	justify-content: $content;
 	align-items: center;
 }
+
+@mixin grid-template {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-rows: repeat(2, 280px);
+	grid-gap: 2em;
+}
