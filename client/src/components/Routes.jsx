@@ -1,22 +1,34 @@
 import { Link, useLocation } from 'react-router-dom';
-import { routes, socialNetworks } from '../utils/domain';
+import { rootRoute, routes, socialNetworks } from '../utils/domain';
 
 function Routes() {
 	const { pathname } = useLocation();
 	return (
 		<nav className='u-flex'>
-			{routes.map(({ id, path, route, abstract }) => (
+			{pathname === '/home' ? (
+				routes.map(({ id, path, route, abstract }) => (
+					<Link
+						key={id}
+						to={path}
+					>
+						<img
+							src={route}
+							alt={abstract}
+						/>
+					</Link>
+				))
+			) : (
 				<Link
-					key={id}
-					to={path}
+					key={rootRoute.id}
+					to={rootRoute.path}
 				>
 					<img
+						src={rootRoute.route}
 						className={pathname === '/' ? 'u-socials' : null}
-						src={route}
-						alt={abstract}
+						alt={rootRoute.abstract}
 					/>
 				</Link>
-			))}
+			)}
 			{pathname === '/' &&
 				socialNetworks.map(({ id, link, redes, description }) => (
 					<a

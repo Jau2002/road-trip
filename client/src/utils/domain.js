@@ -13,11 +13,24 @@ export const socialNetworks = [
 	},
 ];
 
+export const rootRoute = {
+	id: 3,
+	path: '/home',
+	route: '/public/icon-house.png',
+	abstract: 'Home Page',
+};
+
 export const routes = [
 	{
-		id: 3,
-		path: '/home',
-		route: '/public/icon-house.png',
-		abstract: 'Home Page',
+		id: 4,
+		path: '/',
+		route: '/public/icon-welcome.png',
+		abstract: 'Welcome Page',
+	},
+	{
+		id: 5,
+		path: '/country',
+		route: '/public/icon-create.png',
+		abstract: 'Create Page',
 	},
 ];

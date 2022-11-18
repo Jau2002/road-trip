@@ -1,4 +1,5 @@
 import Country from '../components/Country';
+import Nav from '../components/Nav';
 import Paging from '../components/Paging';
 import useManagement from '../hooks/useManagement';
 
@@ -11,6 +12,7 @@ function Home() {
 				alt='bg'
 				className='u-bg-home'
 			/>
+			<Nav />
 			<article className='u-article'>
 				{totalRecords.length ? (
 					totalRecords.map(({ code, name, continent, flag }) => (

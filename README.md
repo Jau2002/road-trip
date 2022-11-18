@@ -56,8 +56,8 @@ Se debe desarrollar una aplicación de React/Redux que contenga las siguientes p
 
 **Ruta principal**: debe contener
 
-- [ ] Input de búsqueda para encontrar países por nombre
-- [ ] Área donde se verá el listado de países. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta `GET /countries` y deberá mostrar su:
+- [x] Input de búsqueda para encontrar países por nombre
+- [x] Área donde se verá el listado de países. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta `GET /countries` y deberá mostrar su:
   - Imagen de la bandera
   - Nombre
   - Continente
