@@ -1,0 +1,22 @@
+.Footer {
+	position: relative;
+	@include flex-flow(row, space-evenly);
+	margin-top: 1.5rem;
+
+	&-button {
+		border: 2px solid;
+		font: 500 1em $font-family;
+		padding: 0.5em 0.8em;
+		color: $white;
+
+		&:hover {
+			border-color: $pumpkin;
+		}
+
+		&:focus {
+			border-color: $pumpkin;
+			box-shadow: 0 0.5em 0.5em -0.4em adjust-hue($pumpkin, 45deg);
+			transform: translateY(-0.25em);
+		}
+	}
+}
