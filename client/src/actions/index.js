@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ALL_COUNTRIES } from '../constants';
+import { GET_ALL_COUNTRIES, GET_BY_NAME } from '../constants';
 
 export function getAllCountries() {
 	return async (dispatch) => {
@@ -12,4 +12,9 @@ export function getAllCountries() {
 	};
 }
 
-export function getAllActivities() {}
+export function getByName(country) {
+	return async (dispatch) => {
+		const { data } = await axios.get(`/countries?name=${country}`);
+		return dispatch({ type: GET_BY_NAME, payload: data });
+	};
+}
