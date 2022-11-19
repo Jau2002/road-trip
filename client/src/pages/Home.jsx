@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Country from '../components/Country';
 import Image from '../components/Image';
 import Nav from '../components/Nav';
@@ -16,12 +17,14 @@ function Home() {
 			<article className='u-article'>
 				{totalRecords.length ? (
 					totalRecords.map(({ code, name, continent, flag }) => (
-						<Country
-							key={code}
-							name={name}
-							continent={continent}
-							flag={flag}
-						/>
+						<Link to={`/country/${code}`}>
+							<Country
+								key={code}
+								name={name}
+								continent={continent}
+								flag={flag}
+							/>
+						</Link>
 					))
 				) : (
 					<Image

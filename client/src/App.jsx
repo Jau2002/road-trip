@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Details from './pages/Details';
 import Home from './pages/Home';
 import Landing from './pages/Landing';
 import NotFound from './pages/NotFound';
@@ -15,6 +16,10 @@ function App() {
 		{
 			path: '/home',
 			element: <Home />,
+		},
+		{
+			path: '/country/:code',
+			element: <Details />,
 		},
 	]);
 	return <RouterProvider router={router} />;
