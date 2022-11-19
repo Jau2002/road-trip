@@ -1,4 +1,5 @@
 import Country from '../components/Country';
+import Image from '../components/Image';
 import Nav from '../components/Nav';
 import Paging from '../components/Paging';
 import useManagement from '../hooks/useManagement';
@@ -7,10 +8,9 @@ function Home() {
 	const { totalRecords, handleOnClick } = useManagement();
 	return (
 		<main>
-			<img
-				src='/public/achieving-travel.jpg'
-				alt='bg'
-				className='u-bg-home'
+			<Image
+				img='achieving-travel.jpg'
+				alt='Background'
 			/>
 			<Nav />
 			<article className='u-article'>
@@ -24,10 +24,10 @@ function Home() {
 						/>
 					))
 				) : (
-					<img
-						src='/public/pre-loader.gif'
+					<Image
+						img='pre-loader.gif'
 						alt='Loading...'
-						className='u-preloader'
+						preloader
 					/>
 				)}
 			</article>

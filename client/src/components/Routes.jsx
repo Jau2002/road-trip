@@ -29,7 +29,7 @@ function Routes() {
 					/>
 				</Link>
 			)}
-			{pathname === '/' &&
+			{(pathname === '/' || pathname.includes('/country')) &&
 				socialNetworks.map(({ id, link, redes, description }) => (
 					<a
 						key={id}
@@ -38,7 +38,7 @@ function Routes() {
 						rel='noreferrer'
 					>
 						<img
-							className='u-socials'
+							className={pathname === '/' ? 'u-socials' : null}
 							src={redes}
 							alt={description}
 						/>
