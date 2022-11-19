@@ -1,9 +1,9 @@
 .Header-404 {
-	@include flex-flow(column, center);
 	gap: 2rem;
 	padding: 3rem;
 	background: $black-russian;
 	height: 100vh;
+	@include flex-flow(column, center);
 
 	&-h2 {
 		font: 700 12em $font-family;

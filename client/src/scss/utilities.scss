@@ -28,8 +28,8 @@
 }
 
 .u-nav {
-	@include flex-flow(row, space-evenly);
 	position: sticky;
+	@include flex-flow(row, space-evenly);
 }
 
 .u-h1 {

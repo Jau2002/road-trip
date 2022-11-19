@@ -5,4 +5,5 @@ rules:
     - true
     - ignoreProperties: [font-smooth]
   selector-class-pattern: null
+  scss/no-global-function-names: null
 ignoreFiles: ['**/node_modules/', 'dist/', 'coverage/']

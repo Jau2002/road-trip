@@ -1,9 +1,10 @@
 .Footer {
 	position: relative;
-	@include flex-flow(row, space-evenly);
 	margin-top: 1.5rem;
+	@include flex-flow(row, space-evenly);
 
 	&-button {
+		cursor: pointer;
 		border: 2px solid;
 		font: 500 1em $font-family;
 		padding: 0.5em 0.8em;
@@ -15,7 +16,7 @@
 
 		&:focus {
 			border-color: $pumpkin;
-			box-shadow: 0 0.5em 0.5em -0.4em adjust-hue($pumpkin, 45deg);
+			box-shadow: 0 0.5em 0.5em -0.4em adjust-hue($pumpkin, $degree);
 			transform: translateY(-0.25em);
 		}
 	}

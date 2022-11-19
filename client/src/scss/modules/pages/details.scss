@@ -23,7 +23,7 @@
 
 	&-div {
 		position: absolute;
-		bottom: 12em;
+		bottom: 9em;
 		right: 10.5em;
 		text-align: center;
 	}
@@ -42,19 +42,17 @@
 }
 
 .main-detail {
-	@include flex-flow(column, center);
-
 	padding: 3em;
+	@include flex-flow(column, center);
 
 	&-h2 {
 		font: 900 3em $font-family;
-		padding: 0.5em 1em 1em;
+		padding-bottom: 0.5em;
 	}
 
 	&-div {
-		@include flex-flow(row, flex-start);
-
 		padding: 1em;
+		@include flex-flow(row, flex-start);
 	}
 
 	&-p {
