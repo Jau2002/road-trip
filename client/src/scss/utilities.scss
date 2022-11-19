@@ -26,3 +26,12 @@
 	border-radius: 10%;
 	box-shadow: blur(10%);
 }
+
+.u-nav {
+	@include flex-flow(row, space-evenly);
+	position: sticky;
+}
+
+.u-h1 {
+	font: 900 2em $font-family;
+}

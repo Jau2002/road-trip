@@ -3,8 +3,16 @@ import useSearch from '../hooks/useSearch';
 function Bar() {
 	const { handleOnSubmit, search, handleOnChange } = useSearch();
 	return (
-		<form onSubmit={handleOnSubmit}>
-			<label htmlFor='country'>Search</label>
+		<form
+			onSubmit={handleOnSubmit}
+			className='Bar'
+		>
+			<label
+				htmlFor='country'
+				className='Bar-label'
+			>
+				Search
+			</label>
 			<input
 				type='text'
 				spellCheck='true'
@@ -12,6 +20,7 @@ function Bar() {
 				placeholder='Countries...'
 				value={search}
 				onChange={handleOnChange}
+				className='Bar-input'
 			/>
 		</form>
 	);

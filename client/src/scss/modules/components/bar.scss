@@ -1,0 +1,30 @@
+.Bar {
+	display: flex;
+
+	&-label {
+		font: 700 1em $font-family;
+		color: $pumpkin;
+		margin: 0.6em 1em;
+	}
+
+	&-input {
+		font: 700 1em $font-family;
+		text-transform: capitalize;
+		background: $dover-gray;
+		outline: none;
+		color: $white;
+		border-radius: 0.5em;
+		padding: 0.3em;
+		transition: padding 1s;
+
+		&:focus {
+			padding: 0.6em;
+			transition: padding 0.4s;
+		}
+
+		&::placeholder {
+			font: 500 italic 1em $font-family;
+			color: $sno;
+		}
+	}
+}
