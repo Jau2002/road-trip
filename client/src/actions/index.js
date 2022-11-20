@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { GET_ALL_COUNTRIES, GET_BY_NAME, GET_DETAIL } from '../constants';
+import {
+	GET_ALL_COUNTRIES,
+	GET_BY_NAME,
+	GET_DETAIL,
+	POST_ACTIVITY,
+} from '../constants';
 
 export function getAllCountries() {
 	return async (dispatch) => {
@@ -28,6 +33,17 @@ export function getDetail(code) {
 		const { data } = await axios.get(`/countries/${code}`);
 		try {
 			return dispatch({ type: GET_DETAIL, payload: data });
+		} catch (err) {
+			throw new Error(err);
+		}
+	};
+}
+
+export function postActivity(body) {
+	return async (dispatch) => {
+		const { data } = await axios.post('/activities', body);
+		try {
+			return dispatch({ type: POST_ACTIVITY, payload: data });
 		} catch (err) {
 			throw new Error(err);
 		}
