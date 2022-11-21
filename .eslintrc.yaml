@@ -56,4 +56,6 @@ rules:
       labelAttributes: [label]
       controlComponents: [CustomInput]
       depth: 3
+  jsx-a11y/control-has-associated-label: 0
+  no-alert: 0
 ignorePatterns: ['node_modules/', 'dist/']
