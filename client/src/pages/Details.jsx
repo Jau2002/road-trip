@@ -23,14 +23,23 @@ function Details() {
 						<h3 className='Section-detail-h3'>Activities</h3>
 						<ul className='Section-detail-ul'>
 							{details[0].activities.length ? (
-								details[0].activities.map((a) => (
-									<li
-										className='Section-detail-li'
-										key={a}
-									>
-										{a}
-									</li>
-								))
+								details[0].activities.map(
+									({ id, name, difficulty, leaving, going, seasons }) => (
+										<div key={id}>
+											<h4>{name}</h4>
+											<p>{difficulty}</p>
+											<h5>{leaving}</h5>
+											<h5>{going}</h5>
+											{seasons?.map((season) => (
+												<span key={season}>{season}</span>
+											))}
+											{/* <h6>{country_activity}</h6> */}
+											{/* {country_activity?.map((country_activity) => (
+												<span key={activity}>{activity}</span>
+											))} */}
+										</div>
+									)
+								)
 							) : (
 								<li className='Section-detail-li'>
 									does not contain information
