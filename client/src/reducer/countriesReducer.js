@@ -4,24 +4,24 @@ import {
 	GET_BY_NAME,
 } from '../constants';
 
-const inicialState = { allCountries: [] };
+const inicialState = { allCountries: [], countries: [] };
 
 function countriesReducer(state = inicialState, { type, payload }) {
 	switch (type) {
 		case GET_ALL_COUNTRIES:
-			return { ...state, allCountries: payload };
+			return { ...state, countries: payload, allCountries: payload };
 
 		case GET_BY_NAME:
-			return { ...state, allCountries: payload };
+			return { ...state, countries: payload };
 
 		case FILTER_BY_CONTINENT:
 			return {
 				...state,
 				allCountries:
 					payload === 'All'
-						? [...state.allCountries]
+						? [...state.countries]
 						: [
-								...state.allCountries.filter(({ continent }) =>
+								...state.countries.filter(({ continent }) =>
 									continent.includes(payload)
 								),
 						  ],

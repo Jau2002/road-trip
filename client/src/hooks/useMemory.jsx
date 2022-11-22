@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCountries } from '../actions';
-import { selectCountries } from '../constants';
+import { selectAllCountries } from '../constants';
 
 function useMemory() {
 	const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function useMemory() {
 		dispatch(getAllCountries());
 	}, [dispatch]);
 
-	const country = useSelector(selectCountries);
+	const country = useSelector(selectAllCountries);
 
 	return { country };
 }
