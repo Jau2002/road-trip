@@ -14,3 +14,5 @@ export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT';
 
 export const selectAllCountries = (state) =>
 	state.countriesReducer.allCountries;
+
+export const ORDER_BY_ALPHABETIC = 'ORDER_BY_ALPHABETIC';

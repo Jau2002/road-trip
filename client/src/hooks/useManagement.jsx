@@ -18,7 +18,7 @@ function useManagement() {
 
 	const totalRecords = country.slice(nextPage, previousPage);
 
-	return { totalRecords, handleOnClick, pageLimit };
+	return { totalRecords, handleOnClick, pageLimit, setCurrentPage };
 }
 
 export default useManagement;

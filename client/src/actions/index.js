@@ -4,6 +4,7 @@ import {
 	GET_ALL_COUNTRIES,
 	GET_BY_NAME,
 	GET_DETAIL,
+	ORDER_BY_ALPHABETIC,
 	POST_ACTIVITY,
 } from '../constants';
 
@@ -53,5 +54,10 @@ export function postActivity(body) {
 
 export const filterByContinent = (payload) => ({
 	type: FILTER_BY_CONTINENT,
+	payload,
+});
+
+export const orderByAlphabetic = (payload) => ({
+	type: ORDER_BY_ALPHABETIC,
 	payload,
 });

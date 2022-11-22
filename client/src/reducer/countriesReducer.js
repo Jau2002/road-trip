@@ -2,6 +2,7 @@ import {
 	FILTER_BY_CONTINENT,
 	GET_ALL_COUNTRIES,
 	GET_BY_NAME,
+	ORDER_BY_ALPHABETIC,
 } from '../constants';
 
 const inicialState = { allCountries: [], countries: [] };
@@ -25,6 +26,19 @@ function countriesReducer(state = inicialState, { type, payload }) {
 									continent.includes(payload)
 								),
 						  ],
+			};
+
+		case ORDER_BY_ALPHABETIC:
+			return {
+				...state,
+				allCountries:
+					payload === 'Desc'
+						? [...state.countries].sort((a, b) =>
+								a.name.toUpperCase() < b.name.toUpperCase() ? 1 : -1
+						  )
+						: [...state.countries].sort((a, b) =>
+								a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1
+						  ),
 			};
 
 		default:

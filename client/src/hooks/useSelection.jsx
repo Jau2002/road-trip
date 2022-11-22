@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { filterByContinent } from '../actions';
+import { filterByContinent, orderByAlphabetic } from '../actions';
 import { selectAllCountries } from '../constants';
+import useManagement from './useManagement';
 
 function useSelection() {
-	const dispatch = useDispatch();
+	const { setCurrentPage } = useManagement();
 
-	const handleFilterContinent = (event) =>
-		dispatch(filterByContinent(event.target.value));
+	const dispatch = useDispatch();
 
 	const countries = useSelector(selectAllCountries);
 
@@ -16,7 +16,16 @@ function useSelection() {
 		(item, index) => allContinent.indexOf(item) === index
 	);
 
-	return { handleFilterContinent, continentOption };
+	const handleFilterContinent = (event) =>
+		dispatch(filterByContinent(event.target.value));
+
+	const handleOrderCountries = (event) => {
+		const { value } = event.target;
+		dispatch(orderByAlphabetic(value));
+		setCurrentPage(1);
+	};
+
+	return { handleFilterContinent, continentOption, handleOrderCountries };
 }
 
 export default useSelection;
