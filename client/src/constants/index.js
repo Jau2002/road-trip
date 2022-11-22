@@ -16,3 +16,5 @@ export const selectAllCountries = (state) =>
 	state.countriesReducer.allCountries;
 
 export const ORDER_BY_ALPHABETIC = 'ORDER_BY_ALPHABETIC';
+
+export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION';

@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { filterByContinent, orderByAlphabetic } from '../actions';
+import {
+	filterByContinent,
+	orderByAlphabetic,
+	orderByPopulation,
+} from '../actions';
 import { selectAllCountries } from '../constants';
 import useManagement from './useManagement';
 
@@ -25,7 +29,18 @@ function useSelection() {
 		setCurrentPage(1);
 	};
 
-	return { handleFilterContinent, continentOption, handleOrderCountries };
+	const handleOrderPopulation = (event) => {
+		const { value } = event.target;
+		dispatch(orderByPopulation(value));
+		setCurrentPage(1);
+	};
+
+	return {
+		handleFilterContinent,
+		continentOption,
+		handleOrderCountries,
+		handleOrderPopulation,
+	};
 }
 
 export default useSelection;

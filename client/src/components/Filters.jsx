@@ -1,8 +1,12 @@
 import useSelection from '../hooks/useSelection';
 
 function Filters() {
-	const { handleFilterContinent, continentOption, handleOrderCountries } =
-		useSelection();
+	const {
+		handleFilterContinent,
+		continentOption,
+		handleOrderCountries,
+		handleOrderPopulation,
+	} = useSelection();
 	return (
 		<aside>
 			<select onChange={handleFilterContinent}>
@@ -22,6 +26,12 @@ function Filters() {
 				<option value='Default'>Default</option>
 				<option value='Asc'>α ↓ ζ</option>
 				<option value='Desc'>ζ ↓ α</option>
+			</select>
+			<select onChange={handleOrderPopulation}>
+				<optgroup label='Population' />
+				<option value='Default'>Default</option>
+				<option value='low'>lowest</option>
+				<option value='High'>highest</option>
 			</select>
 		</aside>
 	);

@@ -5,6 +5,7 @@ import {
 	GET_BY_NAME,
 	GET_DETAIL,
 	ORDER_BY_ALPHABETIC,
+	ORDER_BY_POPULATION,
 	POST_ACTIVITY,
 } from '../constants';
 
@@ -59,5 +60,10 @@ export const filterByContinent = (payload) => ({
 
 export const orderByAlphabetic = (payload) => ({
 	type: ORDER_BY_ALPHABETIC,
+	payload,
+});
+
+export const orderByPopulation = (payload) => ({
+	type: ORDER_BY_POPULATION,
 	payload,
 });
