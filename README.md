@@ -77,13 +77,13 @@ Se debe desarrollar una aplicación de React/Redux que contenga las siguientes p
 
 **Ruta de creación de actividad turística**: debe contener
 
-- [ ] Un formulario **controlado con JavaScript** con los siguientes campos:
+- [x] Un formulario **controlado con JavaScript** con los siguientes campos:
   - Nombre
   - Dificultad
   - Duración
   - Temporada
-- [ ] Posibilidad de seleccionar/agregar varios países en simultáneo
-- [ ] Botón/Opción para crear una nueva actividad turística
+- [x] Posibilidad de seleccionar/agregar varios países en simultáneo
+- [x] Botón/Opción para crear una nueva actividad turística
 
 > Es requisito que el formulario de creación esté validado con JavaScript y no sólo con validaciones HTML. Pueden agregar las validaciones que consideren. Por ejemplo: Que el nombre de la actividad no pueda contener símbolos, que la duración no pueda exceder determinado valor, etc.
 

@@ -9,3 +9,5 @@ export const GET_DETAIL = 'GET_DETAIL';
 export const selectDetail = (state) => state.detailReducer.detail;
 
 export const POST_ACTIVITY = 'POST_ACTIVITY';
+
+export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT';

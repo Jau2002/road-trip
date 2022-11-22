@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {
+	FILTER_BY_CONTINENT,
 	GET_ALL_COUNTRIES,
 	GET_BY_NAME,
 	GET_DETAIL,
@@ -49,3 +50,8 @@ export function postActivity(body) {
 		}
 	};
 }
+
+export const filterByContinent = (payload) => ({
+	type: FILTER_BY_CONTINENT,
+	payload,
+});
