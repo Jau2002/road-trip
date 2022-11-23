@@ -25,18 +25,22 @@ function Details() {
 							{details[0].activities.length ? (
 								details[0].activities.map(
 									({ id, name, difficulty, leaving, going, seasons }) => (
-										<div key={id}>
-											<h4>{name}</h4>
-											<p>{difficulty}</p>
-											<h5>{leaving}</h5>
-											<h5>{going}</h5>
+										<div
+											key={id}
+											className='Detail-div'
+										>
+											<h4 className='Detail-u'>{name}</h4>
+											<p className='Detail-u'>{difficulty}</p>
+											<h5 className='Detail-u'>{leaving}</h5>
+											<h5 className='Detail-u'>{going}</h5>
 											{seasons?.map((season) => (
-												<span key={season}>{season}</span>
+												<span
+													key={season}
+													className='Detail-span'
+												>
+													{season}
+												</span>
 											))}
-											{/* <h6>{country_activity}</h6> */}
-											{/* {country_activity?.map((country_activity) => (
-												<span key={activity}>{activity}</span>
-											))} */}
 										</div>
 									)
 								)

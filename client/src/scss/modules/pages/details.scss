@@ -65,3 +65,21 @@
 		margin-left: 1em;
 	}
 }
+
+.Detail {
+	&-div {
+		position: absolute;
+		top: 2em;
+		left: -1em;
+	}
+
+	&-u {
+		font: 500 1.2em $font-family;
+		padding: 2px 0;
+	}
+
+	&-span {
+		font: 500 1.4em $font-family;
+		padding: 0.5em;
+	}
+}
