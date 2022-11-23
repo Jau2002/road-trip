@@ -16,6 +16,10 @@ $sno: #d3d3d3;
 $urban-obsession: #2c2c2c;
 $gelp: #af8c64;
 $yellow-shine: #ffe0b5;
+$matador-red: #f34336;
+$red: #f00;
+$blue: #00f;
+$deeppink: #ff1493;
 
 /* Pointer images */
 
@@ -24,13 +28,27 @@ $gb: 'bg.jpg';
 
 /* Animations */
 
-@keyframes icons {
+@keyframes freefall {
 	0% {
 		transform: translate(0, 0);
 	}
 
 	100% {
 		transform: translate(0.3rem, 0.4rem);
+	}
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
 	}
 }
 

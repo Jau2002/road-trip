@@ -22,7 +22,8 @@ function useGenerate() {
 		input?.difficulty ||
 		input?.going ||
 		input?.leaving ||
-		input?.seasons.length;
+		input?.seasons.length ||
+		input?.countries.length;
 
 	const handleOnReset = () => setInput(defaultInputsValue);
 
