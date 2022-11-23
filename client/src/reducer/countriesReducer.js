@@ -15,7 +15,7 @@ function countriesReducer(state = inicialState, { type, payload }) {
 			return { ...state, countries: payload, allCountries: payload };
 
 		case GET_BY_NAME:
-			return { ...state, countries: payload };
+			return { ...state, allCountries: payload };
 
 		case FILTER_BY_CONTINENT:
 			return {
@@ -60,11 +60,15 @@ function countriesReducer(state = inicialState, { type, payload }) {
 				allCountries:
 					payload === 'All'
 						? [...state.countries]
-						: [...state.countries].filter(
-								({ activities }) =>
-									activities.length &&
-									activities?.map(({ name }) => name.includes(payload))
-						  ),
+						: [...state.countries].filter(({ activities }) => {
+								if (activities.length) {
+									for (let i = 0; i < activities.length; i++) {
+										if (activities[i].name === payload) {
+											return activities;
+										}
+									}
+								}
+						  }),
 			};
 
 		default:
