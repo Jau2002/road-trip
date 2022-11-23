@@ -10,38 +10,104 @@ function Filters() {
 		handleFilterActivity,
 	} = useSelection();
 	return (
-		<aside>
-			<select onChange={handleFilterContinent}>
-				<optgroup label='Continents' />
-				<option value='All'>All</option>
+		<aside className='Aside'>
+			<select
+				onChange={handleFilterContinent}
+				className='Aside-select'
+			>
+				<optgroup
+					label='Continents'
+					className='Aside-optgroup'
+				/>
+				<option
+					className='Aside-option'
+					value='All'
+				>
+					All
+				</option>
 				{continentOption?.map((c) => (
 					<option
 						value={c}
 						key={c}
+						className='Aside-option'
 					>
 						{c}
 					</option>
 				))}
 			</select>
-			<select onChange={handleOrderCountries}>
-				<optgroup label='Alphabetical' />
-				<option value='Default'>Default</option>
-				<option value='Asc'>α ↓ ζ</option>
-				<option value='Desc'>ζ ↓ α</option>
+			<select
+				onChange={handleOrderCountries}
+				className='Aside-select'
+			>
+				<optgroup
+					label='Alphabetical'
+					className='Aside-optgroup'
+				/>
+				<option
+					value='Default'
+					className='Aside-option'
+				>
+					Default
+				</option>
+				<option
+					value='Asc'
+					className='Aside-option'
+				>
+					α ↓ ζ
+				</option>
+				<option
+					value='Desc'
+					className='Aside-option'
+				>
+					ζ ↓ α
+				</option>
 			</select>
-			<select onChange={handleOrderPopulation}>
-				<optgroup label='Population' />
-				<option value='Default'>Default</option>
-				<option value='low'>lowest</option>
-				<option value='High'>highest</option>
+			<select
+				onChange={handleOrderPopulation}
+				className='Aside-select'
+			>
+				<optgroup
+					label='Population'
+					className='Aside-optgroup'
+				/>
+				<option
+					value='Default'
+					className='Aside-option'
+				>
+					Default
+				</option>
+				<option
+					value='low'
+					className='Aside-option'
+				>
+					lowest
+				</option>
+				<option
+					value='High'
+					className='Aside-option'
+				>
+					highest
+				</option>
 			</select>
-			<select onChange={handleFilterActivity}>
-				<optgroup label='Activities' />
-				<option value='All'>All</option>
+			<select
+				onChange={handleFilterActivity}
+				className='Aside-select'
+			>
+				<optgroup
+					label='Activities'
+					className='Aside-optgroup'
+				/>
+				<option
+					value='All'
+					className='Aside-option'
+				>
+					All
+				</option>
 				{activities?.map(({ id, name }) => (
 					<option
 						value={name}
 						key={id}
+						className='Aside-option'
 					>
 						{name}
 					</option>

@@ -1,0 +1,24 @@
+.Aside {
+	@include flex-flow(row, space-between);
+
+	&-select {
+		padding: 0.5em;
+		margin: 0 1em;
+		color: $yellow-shine;
+		outline: none;
+	}
+
+	&-optgroup {
+		padding: 0.5em;
+		color: $gelp;
+		font: 500 italic 1em $font-family;
+		background: $urban-obsession;
+	}
+
+	&-option {
+		color: $white;
+		font: 500 italic 1em $font-family;
+		background: $dover-gray;
+		padding: 0.5em;
+	}
+}
