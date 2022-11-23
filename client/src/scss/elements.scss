@@ -4,7 +4,7 @@ a > img {
 	width: 50px;
 
 	&:hover {
-		animation: icons 1s forwards;
+		animation: freefall 1s forwards;
 		animation-direction: alternate;
 	}
 }
