@@ -1,6 +1,8 @@
 import axios from 'axios';
 import {
+	FILTER_BY_ACTIVITY,
 	FILTER_BY_CONTINENT,
+	GET_ALL_ACTIVITIES,
 	GET_ALL_COUNTRIES,
 	GET_BY_NAME,
 	GET_DETAIL,
@@ -65,5 +67,21 @@ export const orderByAlphabetic = (payload) => ({
 
 export const orderByPopulation = (payload) => ({
 	type: ORDER_BY_POPULATION,
+	payload,
+});
+
+export function getAllActivities() {
+	return async (dispatch) => {
+		const { data } = await axios.get('/activities');
+		try {
+			return dispatch({ type: GET_ALL_ACTIVITIES, payload: data });
+		} catch (err) {
+			throw new Error(err);
+		}
+	};
+}
+
+export const filterByActivity = (payload) => ({
+	type: FILTER_BY_ACTIVITY,
 	payload,
 });

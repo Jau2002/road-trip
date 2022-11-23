@@ -6,6 +6,8 @@ function Filters() {
 		continentOption,
 		handleOrderCountries,
 		handleOrderPopulation,
+		activities,
+		handleFilterActivity,
 	} = useSelection();
 	return (
 		<aside>
@@ -32,6 +34,18 @@ function Filters() {
 				<option value='Default'>Default</option>
 				<option value='low'>lowest</option>
 				<option value='High'>highest</option>
+			</select>
+			<select onChange={handleFilterActivity}>
+				<optgroup label='Activities' />
+				<option value='All'>All</option>
+				{activities?.map(({ id, name }) => (
+					<option
+						value={name}
+						key={id}
+					>
+						{name}
+					</option>
+				))}
 			</select>
 		</aside>
 	);

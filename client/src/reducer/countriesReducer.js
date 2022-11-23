@@ -1,4 +1,5 @@
 import {
+	FILTER_BY_ACTIVITY,
 	FILTER_BY_CONTINENT,
 	GET_ALL_COUNTRIES,
 	GET_BY_NAME,
@@ -22,11 +23,9 @@ function countriesReducer(state = inicialState, { type, payload }) {
 				allCountries:
 					payload === 'All'
 						? [...state.countries]
-						: [
-								...state.countries.filter(({ continent }) =>
-									continent.includes(payload)
-								),
-						  ],
+						: [...state.countries].filter(({ continent }) =>
+								continent.includes(payload)
+						  ),
 			};
 
 		case ORDER_BY_ALPHABETIC:
@@ -52,6 +51,19 @@ function countriesReducer(state = inicialState, { type, payload }) {
 						  )
 						: [...state.countries].sort((a, b) =>
 								a.population < b.population ? 1 : -1
+						  ),
+			};
+
+		case FILTER_BY_ACTIVITY:
+			return {
+				...state,
+				allCountries:
+					payload === 'All'
+						? [...state.countries]
+						: [...state.countries].filter(
+								({ activities }) =>
+									activities.length &&
+									activities?.map(({ name }) => name.includes(payload))
 						  ),
 			};
 

@@ -18,3 +18,9 @@ export const selectAllCountries = (state) =>
 export const ORDER_BY_ALPHABETIC = 'ORDER_BY_ALPHABETIC';
 
 export const ORDER_BY_POPULATION = 'ORDER_BY_POPULATION';
+
+export const GET_ALL_ACTIVITIES = 'GET_ALL_ACTIVITIES';
+
+export const selectActivities = (state) => state.activitiesReducer.activities;
+
+export const FILTER_BY_ACTIVITY = 'FILTER_BY_ACTIVITY';
