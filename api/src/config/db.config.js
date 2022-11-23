@@ -1,22 +1,36 @@
 const { readdirSync } = require('fs');
 const { join, basename } = require('path');
-const Sequelize = require('sequelize');
-const { configure, makeInitialiser } = require('sequelize-pg-utilities');
-const config = require('./config.json');
+const { Sequelize } = require('sequelize');
 
-const { name, user, password, options } = configure(config);
+const { DB_USER, DB_PASS, DB_HOST, DB_NAME } = process.env;
 
-const initialise = makeInitialiser(config);
-
-const start = async () => {
-	try {
-		await initialise(3);
-	} catch (err) {
-		process.exit(1);
-	}
-};
-
-const sequelize = new Sequelize(name, user, password, options);
+const sequelize =
+	process.env.NODE_ENV === 'production'
+		? new Sequelize({
+				database: DB_NAME,
+				dialect: 'postgres',
+				host: DB_HOST,
+				port: 5432,
+				username: DB_USER,
+				password: DB_PASS,
+				pool: {
+					max: 3,
+					min: 1,
+					idle: 10000,
+				},
+				dialectOptions: {
+					ssl: {
+						require: true,
+						rejectUnauthorized: false,
+					},
+					keepAlive: true,
+				},
+				ssl: true,
+		  })
+		: new Sequelize(`postgres://${DB_USER}:${DB_PASS}@${DB_HOST}/countries`, {
+				logging: false,
+				native: false,
+		  });
 
 const baseName = basename(__filename);
 
@@ -61,5 +75,4 @@ Activity.belongsToMany(Country, {
 module.exports = {
 	...sequelize.models,
 	conn: sequelize,
-	start,
 };
